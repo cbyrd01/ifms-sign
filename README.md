@@ -1,5 +1,5 @@
-# ifms-sign
-Python-Flask interface for Inventor Forge Makerspace sign
+# Inventor Forge Makerspace Sign interface
+This code is a Python-Flask interface for the [Inventor Forge Makerspace](http://www.inventorforgemakerspace.org/) sign. Commands are sent via I2C to a Arduino microcontroller which is directly connected to LED strips for each letter in FORGE and a rotating gear controller.
 
 ## Requirements
 Python3 (tested on Python 3.6.6)
