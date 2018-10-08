@@ -2,9 +2,28 @@ from flask import render_template
 from app import app
 
 @app.route('/')
-
 def index():
     return render_template('index.html', title='IFMS Sign')
+
+@app.route('/letterF')
+def letterF():
+    return render_template('letterF.html', title='IFMS Sign')
+
+@app.route('/letterO')
+def letterO():
+    return render_template('letterO.html', title='IFMS Sign')
+
+@app.route('/letterR')
+def letterR():
+    return render_template('letterR.html', title='IFMS Sign')
+
+@app.route('/letterG')
+def letterG():
+    return render_template('letterG.html', title='IFMS Sign')
+
+@app.route('/letterE')
+def letterE():
+    return render_template('letterE.html', title='IFMS Sign')
 
 @app.route('/favicon.ico')
 def favicon():
