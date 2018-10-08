@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="big-box"><img class="img-responsive" src="{{ url_for('static', filename='{}.png'.format(letter)) }}"></div>
+        </div>
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-6"><div class="mini-box">Red:</div></div>
+                <div class="col-xs-6"><div class="mini-box"><input type="range" id="range" min="1" max="255" step="1" class="form-control-range"></div></div>
+                <div class="col-xs-6"><div class="mini-box">Green:</div></div>
+                <div class="col-xs-6"><div class="mini-box"><input type="range" id="range" min="1" max="255" step="1" class="form-control-range"></div></div>
+                <div class="col-xs-6"><div class="mini-box">Blue:</div></div>
+                <div class="col-xs-6"><div class="mini-box"><input type="range" id="range" min="1" max="255" step="1" class="form-control-range"></div></div>
+            </div>
+        </div>
+    </div>
+   </div>
+
+{% endblock %}
