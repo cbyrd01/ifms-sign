@@ -1,5 +1,12 @@
 {% extends "bootstrap/base.html" %}
 
+{% block head %}
+{{super()}}
+<link rel="icon" type="image/x-icon" href="http://example.com/favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+{% endblock %}
+
 {% block styles %}
 {{ super() }}
   <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
