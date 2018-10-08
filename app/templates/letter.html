@@ -1,20 +1,27 @@
 {% extends "base.html" %}
 
 {% block page_content %}
-<hr>
-<div class="container">
+<hr/>
+<div class="container" style="border:1px solid darkgrey">
     <div class="row">
         <div class="col-xs-3">
             <div class="big-box"><img class="img-responsive" src="{{ url_for('static', filename='{}.png'.format(letter)) }}"></div>
         </div>
-        <div class="col-xs-6">
+        <div class="col-xs-9"><div class="row"><br></div></div>
+        <div class="col-xs-9">
             <div class="row">
-                <div class="col-xs-6"><div class="mini-box">Red:</div></div>
-                <div class="col-xs-6"><div class="mini-box"><input type="range" id="range" min="1" max="255" step="1" class="form-control-range"></div></div>
-                <div class="col-xs-6"><div class="mini-box">Green:</div></div>
-                <div class="col-xs-6"><div class="mini-box"><input type="range" id="range" min="1" max="255" step="1" class="form-control-range"></div></div>
-                <div class="col-xs-6"><div class="mini-box">Blue:</div></div>
-                <div class="col-xs-6"><div class="mini-box"><input type="range" id="range" min="1" max="255" step="1" class="form-control-range"></div></div>
+                <div class="col-xs-2">Red:</div>
+                <div class="col-xs-7"><input type="range" id="range" min="1" max="255" step="1" class="form-control-range"></div>
+            </div>
+            <div class="row"><br></div>
+            <div class="row">
+                <div class="col-xs-2">Green:</div>
+                <div class="col-xs-7"><input type="range" id="range" min="1" max="255" step="1" class="form-control-range"></div>
+            </div>
+            <div class="row"><br></div>
+            <div class="row">
+                <div class="col-xs-2">Blue:</div>
+                <div class="col-xs-7"><input type="range" id="range" min="1" max="255" step="1" class="form-control-range"></div>
             </div>
         </div>
     </div>
