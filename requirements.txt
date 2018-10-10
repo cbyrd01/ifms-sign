@@ -1,3 +1,6 @@
 Flask==1.0.2
 Flask-Bootstrap==3.3.7.1
+Flask-Colorpicker==0.9
+Flask-Redislite==0.1.1
 pylint==2.1.1
+python-dotenv==0.9.1

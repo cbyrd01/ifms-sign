@@ -1,4 +1,9 @@
 {% extends "bootstrap/base.html" %}
+{% block scripts %}
+  {{ super() }}
+  {{ colorpicker.loader() }}
+  {{ colorpicker.picker(ids=[".cp"], color_format='rgb', showAlpha='false', showInput='true', allowEmpty='false') }}
+{% endblock %}
 
 {% block head %}
 {{ super() }}
