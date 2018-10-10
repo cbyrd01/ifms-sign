@@ -7,10 +7,9 @@
         <div class="col-xs-3">
             <div class="big-box"><img class="img-responsive" src="{{ url_for('static', filename='{}.png'.format(letter)) }}"></div>
         </div>
-        <div class="col-xs-9"><div class="row"><br></div></div>
         <div class="col-xs-9">
             <div class="row">
-                <input type="text" data-flat="true" class="form-control cp" />
+                <input type="text" name="color" data-flat="true" class="form-control cp" value="rgb({{ red_val }}, {{ green_val }}, {{ blue_val }})"/>
             </div>
         </div>
     </div>
