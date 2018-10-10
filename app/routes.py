@@ -1,5 +1,5 @@
 from flask import render_template
-from app import app
+from app import app, rdb
 
 @app.route('/')
 def index():
@@ -7,7 +7,12 @@ def index():
 
 @app.route('/letter<letter>')
 def letter(letter):
-    return render_template('letter.html', letter=letter)
+    collection = rdb.collection
+    letter_values = collection.dict(letter)
+    letter_values['red'] = 255
+    letter_values['green'] = 32
+    letter_values['blue'] = 128
+    return render_template('letter.html', letter=letter, red_val=letter_values['red'], green_val=letter_values['green'], blue_val=letter_values['blue'])
 
 @app.route('/favicon.ico')
 def favicon():

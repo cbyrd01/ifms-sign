@@ -10,7 +10,8 @@
             "request": "launch",
             "module": "flask",
             "env": {
-                "FLASK_APP": "sign.py"
+                "FLASK_APP": "sign",
+                "REDISLITE_PATH": "/dev/shm/sign.rdb"
             },
             "args": [
                 "run",
@@ -25,7 +26,8 @@
             "request": "launch",
             "module": "flask",
             "env": {
-                "FLASK_APP": "sign.py"
+                "FLASK_APP": "sign",
+                "REDISLITE_PATH": "/dev/shm/sign.rdb"              
             },
             "args": [
                 "run",
