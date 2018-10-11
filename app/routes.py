@@ -12,7 +12,7 @@ def letter(letter):
     letter_values['red'] = 255
     letter_values['green'] = 32
     letter_values['blue'] = 128
-    return render_template('letter.html', letter=letter, red_val=letter_values['red'], green_val=letter_values['green'], blue_val=letter_values['blue'])
+    return render_template('letter.html', letter=letter, letter_color=letter_values)
 
 @app.route('/favicon.ico')
 def favicon():
