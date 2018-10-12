@@ -22,5 +22,6 @@ The following commands will run a development server. Please note that this is u
 $ source venv/bin/activate
 (venv) $ export FLASK_APP=sign
 (venv) $ export FLASK_ENV=development
+(venv) $ export REDISLITE_PATH=/dev/shm/sign.rdb
 (venv) $ flask run
 ```

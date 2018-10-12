@@ -1,15 +1,21 @@
 {% extends "base.html" %}
 
+{% block scripts %}
+{{ super() }}
+{{ colorpicker.loader() }}
+<script> $(document).ready(function () {$(".cp").spectrum({ showAlpha: false, showInput: true, showButtons: false, allowEmpty: false, color: $(".cp").val() || "rgb(0,0,255)", preferredFormat: "rgb", move: function(color) { $(this).val(color.toRgbString()); socket.emit('{{ 'letter{}'.format(letter) }}', color.toHex()); }, }) }) </script>
+{% endblock %}
+
 {% block page_content %}
 <hr/>
 <div class="container" style="border:1px solid darkgrey">
     <div class="row vertical-align">
         <div class="col-xs-3">
-            <div class="big-box"><img class="img-responsive" src="{{ url_for('static', filename='{}.png'.format(letter)) }}"></div>
+            <div class="big-box"><img class="img-responsive {{ 'letter{}'.format(letter)}}" src="{{ url_for('static', filename='{}.png'.format(letter)) }}"></div>
         </div>
         <div class="col-xs-9">
             <div class="row">
-                <input type="text" name="color_picker" data-flat="true" class="form-control cp" value="{{ letter_color }}"/>
+                <input id="colorpicker" type="text" name="colorpicker" data-flat="true" class="form-control cp" value="{{ letter_values[letter] }}"/>
             </div>
         </div>
     </div>

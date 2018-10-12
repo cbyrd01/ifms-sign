@@ -1,17 +1,24 @@
 from flask import render_template
 from app import app, rdb
 
+
+
 @app.route('/')
 def index():
-    return render_template('index.html')
+    collection = rdb.collection
+    letter_values = collection.dict("letters")
+    letter_values['F'] = "ffff00"
+    letter_values['O'] = "ff0000"
+    letter_values['R'] = "ff00ff"
+    letter_values['G'] = "00ff00"
+    letter_values['E'] = "0000ff"
+    return render_template('index.html', letter_values=letter_values)
 
 @app.route('/letter<letter>')
 def letter(letter):
     collection = rdb.collection
     letter_values = collection.dict("letters")
-    letter_values[(letter)] = "ffff00"
-    letter_color = letter_values[(letter)]
-    return render_template('letter.html', letter=letter, letter_color=letter_color)
+    return render_template('letter.html', letter=letter, letter_values=letter_values)
 
 @app.route('/base.js')
 def basejs():
