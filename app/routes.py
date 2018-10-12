@@ -7,11 +7,6 @@ from app import app, rdb
 def index():
     collection = rdb.collection
     letter_values = collection.dict("letters")
-    letter_values['F'] = "ffff00"
-    letter_values['O'] = "ff0000"
-    letter_values['R'] = "ff00ff"
-    letter_values['G'] = "00ff00"
-    letter_values['E'] = "0000ff"
     return render_template('index.html', letter_values=letter_values)
 
 @app.route('/letter<letter>')

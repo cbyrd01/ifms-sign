@@ -3,7 +3,7 @@
 {% block scripts %}
 {{ super() }}
 {{ colorpicker.loader() }}
-<script> $(document).ready(function () {$(".cp").spectrum({ showAlpha: false, showInput: true, showButtons: false, allowEmpty: false, color: $(".cp").val() || "rgb(0,0,255)", preferredFormat: "rgb", move: function(color) { $(this).val(color.toRgbString()); socket.emit('{{ 'letter{}'.format(letter) }}', color.toHex()); }, }) }) </script>
+<script> $(document).ready(function () {$(".cp").spectrum({ showAlpha: false, showInput: true, allowEmpty: false, color: $(".cp").val() || "rgb(0,0,255)", preferredFormat: "rgb", change: function(color) { $(this).val(color.toRgbString()); socket.emit('{{ 'letter{}'.format(letter) }}', color.toHex()); }, }) }) </script>
 {% endblock %}
 
 {% block page_content %}
