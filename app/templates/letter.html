@@ -3,13 +3,13 @@
 {% block page_content %}
 <hr/>
 <div class="container" style="border:1px solid darkgrey">
-    <div class="row">
+    <div class="row vertical-align">
         <div class="col-xs-3">
             <div class="big-box"><img class="img-responsive" src="{{ url_for('static', filename='{}.png'.format(letter)) }}"></div>
         </div>
         <div class="col-xs-9">
             <div class="row">
-                <input type="text" name="color_picker" data-showInput="true" data-flat="true" class="form-control cp" value="rgb({{ letter_color['red'] }}, {{ letter_color['green'] }}, {{ letter_color['blue'] }})"/>
+                <input type="text" name="color_picker" data-flat="true" class="form-control cp" value="{{ letter_color }}"/>
             </div>
         </div>
     </div>

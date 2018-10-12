@@ -2,7 +2,9 @@
 {% block scripts %}
   {{ super() }}
   {{ colorpicker.loader() }}
-  {{ colorpicker.picker(ids=[".cp"], color_format='rgb', showAlpha='false', allowEmpty='false') }}
+  {{ colorpicker.picker(ids=[".cp"], color_format='rgb', showAlpha='false', showInput='true', allowEmpty='false') }}
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='base.js') }}"></script>
 {% endblock %}
 
 {% block head %}

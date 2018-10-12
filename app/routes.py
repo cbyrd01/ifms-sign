@@ -8,12 +8,15 @@ def index():
 @app.route('/letter<letter>')
 def letter(letter):
     collection = rdb.collection
-    letter_values = collection.dict(letter)
-    letter_values['red'] = 255
-    letter_values['green'] = 32
-    letter_values['blue'] = 128
-    return render_template('letter.html', letter=letter, letter_color=letter_values)
+    letter_values = collection.dict("letters")
+    letter_values[(letter)] = "ffff00"
+    letter_color = letter_values[(letter)]
+    return render_template('letter.html', letter=letter, letter_color=letter_color)
 
+@app.route('/base.js')
+def basejs():
+    return app.send_static_file('base.js')
+    
 @app.route('/favicon.ico')
 def favicon():
     return app.send_static_file('favicon.ico')
