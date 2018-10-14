@@ -25,3 +25,10 @@ $ source venv/bin/activate
 (venv) $ export REDISLITE_PATH=/dev/shm/sign.rdb
 (venv) $ flask run
 ```
+
+## Running Production
+
+The following command will run a production server. For automatic startup and monitoring options, see [Deploying Gunicorn](http://docs.gunicorn.org/en/stable/deploy.html)
+```
+$ gunicorn --worker-class eventlet -w `expr $(nproc) \* 2` sign:app
+```
