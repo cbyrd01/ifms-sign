@@ -23,7 +23,7 @@ $ source venv/bin/activate
 (venv) $ export FLASK_APP=sign
 (venv) $ export FLASK_ENV=development
 (venv) $ export REDISLITE_PATH=/dev/shm/sign.rdb
-(venv) $ flask run
+(venv) $ flask run --no-reload
 ```
 
 ## Running Production
